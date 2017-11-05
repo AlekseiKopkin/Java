@@ -6,7 +6,7 @@ public class Main {
         int length;
         char Char;
         Scanner scan = new Scanner(System.in);
-        System.out.print("Введите натуральноe число для вычисления факториала: ");
+        System.out.print("Enter a number to calculate the factorial: ");
         String str = scan.next();
         length = str.length();
         for (int i = 0; i < length; i++) {
@@ -28,6 +28,6 @@ public class Main {
                     }
                 }
         } while (number < 0);
-        System.out.println("Конец");
+        System.out.println("End");
     }
 }

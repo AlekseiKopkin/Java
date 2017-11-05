@@ -4,7 +4,7 @@ public class Main {
  public static void main(String[] args) {
         boolean error = false;
         Scanner scan = new Scanner(System.in);
-        System.out.print("Ведите первое число: ");
+        System.out.print("Take the first number: ");
         String str1 = scan.next();
         int length = str1.length();
         char Char;
@@ -40,7 +40,7 @@ public class Main {
                 }
             }
             if (error == false) {
-                System.out.print("Ведите второе число: ");
+                System.out.print("Take the second number: ");
                 String str2 = scan.next();
                 length = str2.length();
                 if (length == 1) {
@@ -75,12 +75,12 @@ public class Main {
                     if (error == false) {
                         double number1 = Double.parseDouble(str1);
                         double number2 = Double.parseDouble(str2);
-                        System.out.println("Выберите действия для чисел");
-                        System.out.println("1) Сумма");
-                        System.out.println("2) Минус");
-                        System.out.println("3) Деление");
-                        System.out.println("4) Умножение");
-                        System.out.print("Ваш выбор: ");
+                        System.out.println("Select the actions for numbers");
+                        System.out.println("1) Amount");
+                        System.out.println("2) Minus");
+                        System.out.println("3) Division");
+                        System.out.println("4) Multiplication");
+                        System.out.print("Your choice: ");
                         String str3 = scan.next();
                         count = Integer.parseInt(str3);
                         if (count != 1 && count != 2 && count != 3 && count != 4) {
