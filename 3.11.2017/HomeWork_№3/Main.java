@@ -11,7 +11,7 @@ public class Main {
         length = str.length();
         for (int i = 0; i < length; i++) {
             Char = str.charAt(i);
-            if ((Char != '0') && (Char != '1') && (Char != '2') && (Char != '3') && (Char != '4') && (Char != '5') && (Char != '6') && (Char != '7') && (Char != '8') && (Char != '9')) {
+            if ((Char <48 ) || (Char >57)) {
                 System.out.println("ERROR");
                 return;
             }

@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class Main {
 
- public static void main(String[] args) {
+    public static void main(String[] args) {
         boolean error = false;
         Scanner scan = new Scanner(System.in);
         System.out.print("Take the first number: ");
@@ -12,20 +12,20 @@ public class Main {
         int count;
         if (length == 1) {
             Char = str1.charAt(0);
-            if ((Char != '0') && (Char != '1') && (Char != '2') && (Char != '3') && (Char != '4') && (Char != '5') && (Char != '6') && (Char != '7') && (Char != '8') && (Char != '9')) {
+        if ((Char <48 ) || (Char >57)) {
                 error = true;
                 System.out.println("ERROR");
             }
         }
         if (length > 1) {
             Char = str1.charAt(0);
-            if ((Char != '-')&&(Char != '0') && (Char != '1') && (Char != '2') && (Char != '3') && (Char != '4') && (Char != '5') && (Char != '6') && (Char != '7') && (Char != '8') && (Char != '9')) {
+            if ((Char != '-')&&((Char <48 ) || (Char >57))) {
                 error = true;
                 System.out.println("ERROR");
             }
             if(Char=='-'){
                 Char = str1.charAt(1);
-                if ((Char != '1') && (Char != '2') && (Char != '3') && (Char != '4') && (Char != '5') && (Char != '6') && (Char != '7') && (Char != '8') && (Char != '9')) {
+                if ((Char <49 ) || (Char >57)) {
                     error = true;
                     System.out.println("ERROR");
                 }
@@ -34,7 +34,7 @@ public class Main {
         if (error == false) {
             for (int i = 1; i < length; i++) {
                 Char = str1.charAt(i);
-                if ((Char != '.') && (Char != '0') && (Char != '1') && (Char != '2') && (Char != '3') && (Char != '4') && (Char != '5') && (Char != '6') && (Char != '7') && (Char != '8') && (Char != '9')) {
+                if ((Char != '.') && ((Char <48 ) || (Char >57))) {
                     error = true;
                     System.out.println("ERROR");
                 }
@@ -45,20 +45,20 @@ public class Main {
                 length = str2.length();
                 if (length == 1) {
                     Char = str2.charAt(0);
-                    if ((Char != '0') && (Char != '1') && (Char != '2') && (Char != '3') && (Char != '4') && (Char != '5') && (Char != '6') && (Char != '7') && (Char != '8') && (Char != '9')) {
+                    if ((Char <48 ) || (Char >57)) {
                         error = true;
                         System.out.println("ERROR");
                     }
                 }
                 if (length > 1) {
                     Char = str2.charAt(0);
-                    if ((Char != '-')&&(Char != '0') && (Char != '1') && (Char != '2') && (Char != '3') && (Char != '4') && (Char != '5') && (Char != '6') && (Char != '7') && (Char != '8') && (Char != '9')) {
+                    if ((Char != '-')&&((Char <48 ) || (Char >57))){
                         error = true;
                         System.out.println("ERROR");
                     }
                     if(Char=='-'){
                         Char = str2.charAt(1);
-                        if ((Char != '1') && (Char != '2') && (Char != '3') && (Char != '4') && (Char != '5') && (Char != '6') && (Char != '7') && (Char != '8') && (Char != '9')) {
+                        if ((Char <49 ) || (Char >57)) {
                             error = true;
                             System.out.println("ERROR");
                         }
@@ -67,7 +67,7 @@ public class Main {
                 if (error == false) {
                     for (int i = 1; i < length; i++) {
                         Char = str2.charAt(i);
-                        if ((Char != '.') && (Char != '0') && (Char != '1') && (Char != '2') && (Char != '3') && (Char != '4') && (Char != '5') && (Char != '6') && (Char != '7') && (Char != '8') && (Char != '9')) {
+                        if ((Char != '.') && ((Char <48 ) || (Char >57))) {
                             error = true;
                             System.out.println("ERROR");
                         }

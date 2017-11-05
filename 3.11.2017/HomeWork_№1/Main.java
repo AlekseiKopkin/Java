@@ -7,20 +7,20 @@ public class Main {
         double result;
         if (length == 1) {
             Char = args[0].charAt(0);
-            if ((Char != '0') && (Char != '1') && (Char != '2') && (Char != '3') && (Char != '4') && (Char != '5') && (Char != '6') && (Char != '7') && (Char != '8') && (Char != '9')) {
+            if ((Char <48 ) || (Char >57)) {
                 error = true;
                 System.out.println("ERROR");
             }
         }
         if (length > 1) {
             Char = args[0].charAt(0);
-            if ((Char != '-')&&(Char != '0') && (Char != '1') && (Char != '2') && (Char != '3') && (Char != '4') && (Char != '5') && (Char != '6') && (Char != '7') && (Char != '8') && (Char != '9')) {
+            if ((Char != '-')&&(Char <48 ) || (Char >57)) {
                 error = true;
                 System.out.println("ERROR");
             }
             if(Char=='-'){
                 Char = args[0].charAt(1);
-                if ((Char != '1') && (Char != '2') && (Char != '3') && (Char != '4') && (Char != '5') && (Char != '6') && (Char != '7') && (Char != '8') && (Char != '9')) {
+                if ((Char <49 ) || (Char >57)) {
                     error = true;
                     System.out.println("ERROR");
                 }
@@ -29,7 +29,7 @@ public class Main {
         if (error == false) {
             for (int i = 0; i < length; i++) {
                 Char = args[0].charAt(i);
-                if ((Char != '.') && (Char != '0') && (Char != '1') && (Char != '2') && (Char != '3') && (Char != '4') && (Char != '5') && (Char != '6') && (Char != '7') && (Char != '8') && (Char != '9')) {
+                if ((Char != '.') && (Char <48 ) || (Char >57)) {
                     error = true;
                     System.out.println("ERROR");
                 }
@@ -37,20 +37,20 @@ public class Main {
             if (error == false) {
                 if (length == 1) {
                     Char = args[1].charAt(0);
-                    if ((Char != '0') && (Char != '1') && (Char != '2') && (Char != '3') && (Char != '4') && (Char != '5') && (Char != '6') && (Char != '7') && (Char != '8') && (Char != '9')) {
+                    if ((Char <48 ) || (Char >57)) {
                         error = true;
                         System.out.println("ERROR");
                     }
                 }
                 if (length > 1) {
                     Char = args[1].charAt(0);
-                    if ((Char != '-')&&(Char != '0') && (Char != '1') && (Char != '2') && (Char != '3') && (Char != '4') && (Char != '5') && (Char != '6') && (Char != '7') && (Char != '8') && (Char != '9')) {
+                    if ((Char != '-')&&(Char <48 ) || (Char >57)) {
                         error = true;
                         System.out.println("ERROR");
                     }
                     if(Char=='-'){
                         Char = args[1].charAt(1);
-                        if ((Char != '1') && (Char != '2') && (Char != '3') && (Char != '4') && (Char != '5') && (Char != '6') && (Char != '7') && (Char != '8') && (Char != '9')) {
+                        if ((Char <49 ) || (Char >57)) {
                             error = true;
                             System.out.println("ERROR");
                         }
@@ -59,7 +59,7 @@ public class Main {
                 if (error == false) {
                     for (int i = 0; i < length; i++) {
                         Char = args[1].charAt(i);
-                        if ((Char != '.') && (Char != '0') && (Char != '1') && (Char != '2') && (Char != '3') && (Char != '4') && (Char != '5') && (Char != '6') && (Char != '7') && (Char != '8') && (Char != '9')) {
+                        if ((Char != '.') && (Char <48 ) || (Char >57)) {
                             error = true;
                             System.out.println("ERROR");
                         }
