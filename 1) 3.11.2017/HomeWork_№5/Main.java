@@ -1,12 +1,12 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-		int[][] IP = new int[2][4];
+        Scanner scan = new Scanner(System.in);
+        IPAddressAndMask Check = new IPAddressAndMask();
+        System.out.println("Lead IP and Mask");
+        int[][] IP = new int[2][4];
         int Subnet[][] = new int[2][4];
         int[] Mask = new int[4];
-		IPAddressAndMask Check = new IPAddressAndMask();
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Lead IP and Mask");
         String mask;
         System.out.print("Enter the first part of the first IP addresses: ");
         String ip = scan.next();
@@ -103,13 +103,28 @@ class IPAddressAndMask {
                 System.out.println("ERROR");
                 System.exit(0);
             }
-            if ((IpOrMask.charAt(0) >= 49 || IpOrMask.charAt(0) <= 50)) {
+            if (IpOrMask.charAt(0) == 50) {
                 if ((IpOrMask.charAt(1) < 48) || (IpOrMask.charAt(1) > 53)) {
                     System.out.println("ERROR");
                     System.exit(0);
                 }
             }
-            if ((IpOrMask.charAt(0) >= 49 || IpOrMask.charAt(0) <= 50)) {
+            if (IpOrMask.charAt(0) == 49) {
+                if ((IpOrMask.charAt(1) < 48) || (IpOrMask.charAt(1) > 57)) {
+                    System.out.println("ERROR");
+                    System.exit(0);
+                }
+            }
+            if (IpOrMask.charAt(0) == 49) {
+                if ((IpOrMask.charAt(1) >= 48) || (IpOrMask.charAt(1) <= 57)) {
+                    if ((IpOrMask.charAt(2) < 48) || (IpOrMask.charAt(2) > 57)) {
+                        System.out.println("ERROR");
+                        System.exit(0);
+                    }
+                }
+
+            }
+            if (IpOrMask.charAt(0) == 50) {
                 if ((IpOrMask.charAt(1) >= 48) || (IpOrMask.charAt(1) <= 53)) {
                     if ((IpOrMask.charAt(2) < 48) || (IpOrMask.charAt(2) > 53)) {
                         System.out.println("ERROR");
