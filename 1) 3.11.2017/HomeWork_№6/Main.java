@@ -34,7 +34,7 @@ public class Main {
         layer:
         for (int i = 0; i < str1.length(); i++) {
             if (str1.charAt(i) == str2.charAt(i)) break;
-            for (int j = 0; j < count; j++) {
+            for (int j = 0; j < 2; j++) {
                 for (int k = 0; k <count; j++) {
                     if (str1.charAt(i) == let[j][k]) {
                         if (j == 0 && str2.charAt(i) == let[1][k]) break layer;
