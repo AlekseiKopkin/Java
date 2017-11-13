@@ -31,166 +31,558 @@ public class Main {
 }
 
 class Interface {
-    void square() {
+    void square() { //Квадрат
         Square square = new Square();
-        Check check=new Check();
-        Double area, petimeter, width, height;
-        out.print(" 1)Area\n 2)Perimeter\n Enter the action number: ");
+        Check check = new Check();
         Scanner scanner = new Scanner(System.in);
-        String coun = scanner.next();
+        int count;
+        double area, petimeter, width, height, coordinateX, coordinateY, coordinateX2, coordinateY2;
+        String coun, coordX, coordY;
+        out.print(" 1)Enter number\n 2)Input by coordinates\n Your choice: ");
+        coun = scanner.next();
         check.checkInt(coun);
-        int count = Integer.parseInt(coun);
+        count = Integer.parseInt(coun);
         switch (count) {
             case 1:
-                out.print(" Enter the side size of the square: ");
+                out.print(" 1)Area\n 2)Perimeter\n Enter the action number: ");
                 coun = scanner.next();
-                check.checkDouble(coun);
-                width = Double.parseDouble(coun);
-                height = Double.parseDouble(coun);
-                square.setArea(width, height);
-                square.Area();
-                area = square.getArea();
-                out.println(area);
+                check.checkInt(coun);
+                count = Integer.parseInt(coun);
+                switch (count) {
+                    case 1:
+                        out.print(" Enter the side size of the square: ");
+                        coun = scanner.next();
+                        check.checkDouble(coun);
+                        width = Double.parseDouble(coun);
+                        height = Double.parseDouble(coun);
+                        square.setArea(width, height);
+                        square.Area();
+                        area = square.getArea();
+                        out.println(area);
+                        break;
+                    case 2:
+                        out.print(" Enter the side size the square: ");
+                        coun = scanner.next();
+                        check.checkDouble(coun);
+                        width = Double.parseDouble(coun);
+                        height = Double.parseDouble(coun);
+                        square.setPerimeter(width, height);
+                        square.Perimeter();
+                        petimeter = square.getPerimeter();
+                        out.println(petimeter);
+                        break;
+                    default:
+                        out.println("ERROR");
+                        break;
+                }
                 break;
             case 2:
-                out.print(" Enter the side size the square: ");
+                out.print(" 1)Area\n 2)Perimeter\n Enter the action number: ");
+                ParameterCount parameterCount = new ParameterCount();
                 coun = scanner.next();
-                check.checkDouble(coun);
-                width = Double.parseDouble(coun);
-                height = Double.parseDouble(coun);
-                square.setPerimeter(width, height);
-                square.Perimeter();
-                petimeter = square.getPerimeter();
-                out.println(petimeter);
+                check.checkInt(coun);
+                count = Integer.parseInt(coun);
+                switch (count) {
+                    case 1:
+                        out.print(" Value of X coordinate: ");
+                        coordX = scanner.next();
+                        check.checkCoordinate(coordX);
+                        coordinateX = Double.parseDouble(coordX);
+                        out.print(" Value of Y coordinate: ");
+                        coordY = scanner.next();
+                        check.checkCoordinate(coordY);
+                        coordinateY = Double.parseDouble(coordY);
+                        out.print(" Value of X coordinate: ");
+                        coordX = scanner.next();
+                        check.checkCoordinate(coordX);
+                        coordinateX2 = Double.parseDouble(coordX);
+                        out.print(" Value of y coordinate: ");
+                        coordY = scanner.next();
+                        check.checkCoordinate(coordY);
+                        coordinateY2 = Double.parseDouble(coordY);
+                        parameterCount.setCount(coordinateX, coordinateY, coordinateX2, coordinateY2);
+                        parameterCount.Count();
+                        width = parameterCount.getCount();
+                        height = parameterCount.getCount();
+                        square.setArea(width, height);
+                        square.Area();
+                        area = square.getArea();
+                        out.println(area);
+                        break;
+                    case 2:
+                        out.print(" Value of X coordinate: ");
+                        coordX = scanner.next();
+                        check.checkCoordinate(coordX);
+                        coordinateX = Double.parseDouble(coordX);
+                        out.print(" Value of Y coordinate: ");
+                        coordY = scanner.next();
+                        check.checkCoordinate(coordY);
+                        coordinateY = Double.parseDouble(coordY);
+                        out.print(" Value of X coordinate: ");
+                        coordX = scanner.next();
+                        check.checkCoordinate(coordX);
+                        coordinateX2 = Double.parseDouble(coordX);
+                        out.print(" Value of y coordinate: ");
+                        coordY = scanner.next();
+                        check.checkCoordinate(coordY);
+                        coordinateY2 = Double.parseDouble(coordY);
+                        parameterCount.setCount(coordinateX, coordinateY, coordinateX2, coordinateY2);
+                        parameterCount.Count();
+                        width = parameterCount.getCount();
+                        height = parameterCount.getCount();
+                        square.setPerimeter(width, height);
+                        square.Perimeter();
+                        petimeter = square.getPerimeter();
+                        out.println(petimeter);
+                        break;
+                    default:
+                        out.println("ERROR");
+                        break;
+                }
                 break;
             default:
                 out.println("ERROR");
                 break;
         }
     }
-    void rectangle() {
+    void rectangle() { //Прямоугольник
         Rectangle rectangle = new Rectangle();
-        Check check=new Check();
-        Double area, petimeter, width, height;
-        out.print(" 1)Area\n 2)Perimeter\n Enter the action number: ");
         Scanner scanner = new Scanner(System.in);
-        String coun = scanner.next();
+        Check check = new Check();
+        int count;
+        double area, petimeter, width, height, coordinateX, coordinateY, coordinateX2, coordinateY2;
+        String coun, coordX, coordY;
+        out.print(" 1)Enter number\n 2)Input by coordinates\n Your choice: ");
+        coun = scanner.next();
         check.checkInt(coun);
-        int count = Integer.parseInt(coun);
+        count = Integer.parseInt(coun);
         switch (count) {
             case 1:
-                out.print(" Enter the height of the rectangle: ");
+                out.print(" 1)Area\n 2)Perimeter\n Enter the action number: ");
                 coun = scanner.next();
-                check.checkDouble(coun);
-                height = Double.parseDouble(coun);
-                out.print(" Enter the width of the rectangle: ");
-                coun = scanner.next();
-                check.checkDouble(coun);
-                width = Double.parseDouble(coun);
-                rectangle.setArea(width, height);
-                rectangle.Area();
-                area = rectangle.getArea();
-                out.println(area);
+                check.checkInt(coun);
+                count = Integer.parseInt(coun);
+                switch (count) {
+                    case 1:
+                        out.print(" Enter the height of the rectangle: ");
+                        coun = scanner.next();
+                        check.checkDouble(coun);
+                        height = Double.parseDouble(coun);
+                        out.print(" Enter the width of the rectangle: ");
+                        coun = scanner.next();
+                        check.checkDouble(coun);
+                        width = Double.parseDouble(coun);
+                        rectangle.setArea(width, height);
+                        rectangle.Area();
+                        area = rectangle.getArea();
+                        out.println(area);
+                        break;
+                    case 2:
+                        out.print(" Enter the height of the rectangle: ");
+                        coun = scanner.next();
+                        check.checkDouble(coun);
+                        height = Double.parseDouble(coun);
+                        out.print(" Enter the width of the rectangle: ");
+                        coun = scanner.next();
+                        check.checkDouble(coun);
+                        width = Double.parseDouble(coun);
+                        rectangle.setPerimeter(width, height);
+                        rectangle.Perimeter();
+                        petimeter = rectangle.getPerimeter();
+                        out.println(petimeter);
+                        break;
+                    default:
+                        out.println("ERROR");
+                        break;
+                }
                 break;
             case 2:
-                out.print(" Enter the height of the rectangle: ");
+                out.print(" 1)Area\n 2)Perimeter\n Enter the action number: ");
+                ParameterCount parameterCount = new ParameterCount();
                 coun = scanner.next();
-                check.checkDouble(coun);
-                height = Double.parseDouble(coun);
-                out.print(" Enter the width of the rectangle: ");
-                coun = scanner.next();
-                check.checkDouble(coun);
-                width = Double.parseDouble(coun);
-                rectangle.setPerimeter(width, height);
-                rectangle.Perimeter();
-                petimeter = rectangle.getPerimeter();
-                out.println(petimeter);
+                check.checkInt(coun);
+                count = Integer.parseInt(coun);
+                switch (count) {
+                    case 1:
+                        out.print(" Value of X coordinate: ");
+                        coordX = scanner.next();
+                        check.checkCoordinate(coordX);
+                        coordinateX = Double.parseDouble(coordX);
+                        out.print(" Value of Y coordinate: ");
+                        coordY = scanner.next();
+                        check.checkCoordinate(coordY);
+                        coordinateY = Double.parseDouble(coordY);
+                        out.print(" Value of X coordinate: ");
+                        coordX = scanner.next();
+                        check.checkCoordinate(coordX);
+                        coordinateX2 = Double.parseDouble(coordX);
+                        out.print(" Value of y coordinate: ");
+                        coordY = scanner.next();
+                        check.checkCoordinate(coordY);
+                        coordinateY2 = Double.parseDouble(coordY);
+                        parameterCount.setCount(coordinateX, coordinateY, coordinateX2, coordinateY2);
+                        parameterCount.Count();
+                        width = parameterCount.getCount();
+                        out.print(" Value of X coordinate: ");
+                        coordX = scanner.next();
+                        check.checkCoordinate(coordX);
+                        coordinateX = Double.parseDouble(coordX);
+                        out.print(" Value of Y coordinate: ");
+                        coordY = scanner.next();
+                        check.checkCoordinate(coordY);
+                        coordinateY = Double.parseDouble(coordY);
+                        out.print(" Value of X coordinate: ");
+                        coordX = scanner.next();
+                        check.checkCoordinate(coordX);
+                        coordinateX2 = Double.parseDouble(coordX);
+                        out.print(" Value of y coordinate: ");
+                        coordY = scanner.next();
+                        check.checkCoordinate(coordY);
+                        coordinateY2 = Double.parseDouble(coordY);
+                        parameterCount.setCount(coordinateX, coordinateY, coordinateX2, coordinateY2);
+                        parameterCount.Count();
+                        height = parameterCount.getCount();
+                        rectangle.setArea(width, height);
+                        rectangle.Area();
+                        area = rectangle.getArea();
+                        out.println(area);
+                        break;
+                    case 2:
+                        out.print(" Value of X coordinate: ");
+                        coordX = scanner.next();
+                        check.checkCoordinate(coordX);
+                        coordinateX = Double.parseDouble(coordX);
+                        out.print(" Value of Y coordinate: ");
+                        coordY = scanner.next();
+                        check.checkCoordinate(coordY);
+                        coordinateY = Double.parseDouble(coordY);
+                        out.print(" Value of X coordinate: ");
+                        coordX = scanner.next();
+                        check.checkCoordinate(coordX);
+                        coordinateX2 = Double.parseDouble(coordX);
+                        out.print(" Value of y coordinate: ");
+                        coordY = scanner.next();
+                        check.checkCoordinate(coordY);
+                        coordinateY2 = Double.parseDouble(coordY);
+                        parameterCount.setCount(coordinateX, coordinateY, coordinateX2, coordinateY2);
+                        parameterCount.Count();
+                        width = parameterCount.getCount();
+                        out.print(" Value of X coordinate: ");
+                        coordX = scanner.next();
+                        check.checkCoordinate(coordX);
+                        coordinateX = Double.parseDouble(coordX);
+                        out.print(" Value of Y coordinate: ");
+                        coordY = scanner.next();
+                        check.checkCoordinate(coordY);
+                        coordinateY = Double.parseDouble(coordY);
+                        out.print(" Value of X coordinate: ");
+                        coordX = scanner.next();
+                        check.checkCoordinate(coordX);
+                        coordinateX2 = Double.parseDouble(coordX);
+                        out.print(" Value of y coordinate: ");
+                        coordY = scanner.next();
+                        check.checkCoordinate(coordY);
+                        coordinateY2 = Double.parseDouble(coordY);
+                        parameterCount.setCount(coordinateX, coordinateY, coordinateX2, coordinateY2);
+                        parameterCount.Count();
+                        height = parameterCount.getCount();
+                        rectangle.setPerimeter(width, height);
+                        rectangle.Perimeter();
+                        petimeter = rectangle.getPerimeter();
+                        out.println(petimeter);
+                    default:
+                        out.println("ERROR");
+                        break;
+                }
                 break;
             default:
                 out.println("ERROR");
                 break;
         }
     }
-    void triangle(){
+    void triangle() {
         Triangle triangle = new Triangle();
-        Check check=new Check();
-        Double area, petimeter, base, height,side1,side2,side3;
-        out.print(" 1)Area\n 2)Perimeter\n Enter the action number: ");
         Scanner scanner = new Scanner(System.in);
-        String coun = scanner.next();
+        Check check = new Check();
+        int count;
+        double area, petimeter, height, coordinateX, coordinateY, coordinateX2, coordinateY2,base, side1, side2, side3;
+        String coun, coordX, coordY;
+        out.print(" 1)Enter number\n 2)Input by coordinates\n Your choice: ");
+        coun = scanner.next();
         check.checkInt(coun);
-        int count = Integer.parseInt(coun);
+        count = Integer.parseInt(coun);
         switch (count) {
             case 1:
-                out.print(" Enter the height of the triangle: ");
+                out.print(" 1)Area\n 2)Perimeter\n Enter the action number: ");
                 coun = scanner.next();
-                check.checkDouble(coun);
-                height = Double.parseDouble(coun);
-                out.print(" Enter the base of the triangle: ");
-                coun = scanner.next();
-                check.checkDouble(coun);
-                base = Double.parseDouble(coun);
-                triangle.setArea(height,base);
-                triangle.Area();
-                area = triangle.getArea();
-                out.println(area);
-                break;
+                check.checkInt(coun);
+                count = Integer.parseInt(coun);
+                switch (count) {
+                    case 1:
+                        out.print(" Enter the height of the triangle: ");
+                        coun = scanner.next();
+                        check.checkDouble(coun);
+                        height = Double.parseDouble(coun);
+                        out.print(" Enter the base of the triangle: ");
+                        coun = scanner.next();
+                        check.checkDouble(coun);
+                        base = Double.parseDouble(coun);
+                        triangle.setArea(height, base);
+                        triangle.Area();
+                        area = triangle.getArea();
+                        out.println(area);
+                        break;
+                    case 2:
+                        out.print(" Enter the side of the triangle ");
+                        coun = scanner.next();
+                        check.checkDouble(coun);
+                        side1 = Double.parseDouble(coun);
+                        out.print(" Enter the side of the triangle ");
+                        coun = scanner.next();
+                        check.checkDouble(coun);
+                        side2 = Double.parseDouble(coun);
+                        out.print(" Enter the side of the triangle ");
+                        coun = scanner.next();
+                        check.checkDouble(coun);
+                        side3 = Double.parseDouble(coun);
+                        triangle.setPerimeter(side1, side2, side3);
+                        triangle.Perimeter();
+                        petimeter = triangle.getPerimeter();
+                        out.println(petimeter);
+                        break;
+                    default:
+                        out.println("ERROR");
+                        break;
+                }
             case 2:
-                out.print(" Enter the side of the triangle ");
+                out.print(" 1)Area\n 2)Perimeter\n Enter the action number: ");
+                ParameterCount parameterCount = new ParameterCount();
                 coun = scanner.next();
-                check.checkDouble(coun);
-                side1 = Double.parseDouble(coun);
-                out.print(" Enter the side of the triangle ");
-                coun = scanner.next();
-                check.checkDouble(coun);
-                side2 = Double.parseDouble(coun);
-                out.print(" Enter the side of the triangle ");
-                coun = scanner.next();
-                check.checkDouble(coun);
-                side3 = Double.parseDouble(coun);
-                triangle.setPerimeter(side1,side2,side3);
-                triangle.Perimeter();
-                petimeter = triangle.getPerimeter();
-                out.println(petimeter);
+                check.checkInt(coun);
+                count = Integer.parseInt(coun);
+                switch (count) {
+                    case 1:
+                        out.print(" Value of X coordinate: ");
+                        coordX = scanner.next();
+                        check.checkCoordinate(coordX);
+                        coordinateX = Double.parseDouble(coordX);
+                        out.print(" Value of Y coordinate: ");
+                        coordY = scanner.next();
+                        check.checkCoordinate(coordY);
+                        coordinateY = Double.parseDouble(coordY);
+                        out.print(" Value of X coordinate: ");
+                        coordX = scanner.next();
+                        check.checkCoordinate(coordX);
+                        coordinateX2 = Double.parseDouble(coordX);
+                        out.print(" Value of y coordinate: ");
+                        coordY = scanner.next();
+                        check.checkCoordinate(coordY);
+                        coordinateY2 = Double.parseDouble(coordY);
+                        parameterCount.setCount(coordinateX, coordinateY, coordinateX2, coordinateY2);
+                        parameterCount.Count();
+                        base = parameterCount.getCount();
+                        out.print(" Value of X coordinate: ");
+                        coordX = scanner.next();
+                        check.checkCoordinate(coordX);
+                        coordinateX = Double.parseDouble(coordX);
+                        out.print(" Value of Y coordinate: ");
+                        coordY = scanner.next();
+                        check.checkCoordinate(coordY);
+                        coordinateY = Double.parseDouble(coordY);
+                        out.print(" Value of X coordinate: ");
+                        coordX = scanner.next();
+                        check.checkCoordinate(coordX);
+                        coordinateX2 = Double.parseDouble(coordX);
+                        out.print(" Value of y coordinate: ");
+                        coordY = scanner.next();
+                        check.checkCoordinate(coordY);
+                        coordinateY2 = Double.parseDouble(coordY);
+                        parameterCount.setCount(coordinateX, coordinateY, coordinateX2, coordinateY2);
+                        parameterCount.Count();
+                        height = parameterCount.getCount();
+                        triangle.setArea(height, base);
+                        triangle.Area();
+                        area = triangle.getArea();
+                        out.println(area);
+                        break;
+                    case 2:
+                        out.print(" Value of X coordinate: ");
+                        coordX = scanner.next();
+                        check.checkCoordinate(coordX);
+                        coordinateX = Double.parseDouble(coordX);
+                        out.print(" Value of Y coordinate: ");
+                        coordY = scanner.next();
+                        check.checkCoordinate(coordY);
+                        coordinateY = Double.parseDouble(coordY);
+                        out.print(" Value of X coordinate: ");
+                        coordX = scanner.next();
+                        check.checkCoordinate(coordX);
+                        coordinateX2 = Double.parseDouble(coordX);
+                        out.print(" Value of y coordinate: ");
+                        coordY = scanner.next();
+                        check.checkCoordinate(coordY);
+                        coordinateY2 = Double.parseDouble(coordY);
+                        parameterCount.setCount(coordinateX, coordinateY, coordinateX2, coordinateY2);
+                        parameterCount.Count();
+                        side1 = parameterCount.getCount();
+                        out.print(" Value of X coordinate: ");
+                        coordX = scanner.next();
+                        check.checkCoordinate(coordX);
+                        coordinateX = Double.parseDouble(coordX);
+                        out.print(" Value of Y coordinate: ");
+                        coordY = scanner.next();
+                        check.checkCoordinate(coordY);
+                        coordinateY = Double.parseDouble(coordY);
+                        out.print(" Value of X coordinate: ");
+                        coordX = scanner.next();
+                        check.checkCoordinate(coordX);
+                        coordinateX2 = Double.parseDouble(coordX);
+                        out.print(" Value of y coordinate: ");
+                        coordY = scanner.next();
+                        check.checkCoordinate(coordY);
+                        coordinateY2 = Double.parseDouble(coordY);
+                        parameterCount.setCount(coordinateX, coordinateY, coordinateX2, coordinateY2);
+                        parameterCount.Count();
+                        side2 = parameterCount.getCount();
+                        out.print(" Value of X coordinate: ");
+                        coordX = scanner.next();
+                        check.checkCoordinate(coordX);
+                        coordinateX = Double.parseDouble(coordX);
+                        out.print(" Value of Y coordinate: ");
+                        coordY = scanner.next();
+                        check.checkCoordinate(coordY);
+                        coordinateY = Double.parseDouble(coordY);
+                        out.print(" Value of X coordinate: ");
+                        coordX = scanner.next();
+                        check.checkCoordinate(coordX);
+                        coordinateX2 = Double.parseDouble(coordX);
+                        out.print(" Value of y coordinate: ");
+                        coordY = scanner.next();
+                        check.checkCoordinate(coordY);
+                        coordinateY2 = Double.parseDouble(coordY);
+                        parameterCount.setCount(coordinateX, coordinateY, coordinateX2, coordinateY2);
+                        parameterCount.Count();
+                        side3 = parameterCount.getCount();
+                        triangle.setPerimeter(side1, side2, side3);
+                        triangle.Perimeter();
+                        petimeter = triangle.getPerimeter();
+                        out.println(petimeter);
+                        break;
+                    default:
+                        out.println("ERROR");
+                }
                 break;
             default:
                 out.println("ERROR");
                 break;
         }
     }
-    void circle(){
+    void circle() {
         Circle circle = new Circle();
-        Check check =new Check();
-        Double area, petimeter,radius; ;
-        out.print(" 1)Area\n 2)Perimeter\n Enter the action number: ");
         Scanner scanner = new Scanner(System.in);
-        String coun = scanner.next();
+        Check check = new Check();
+        int count;
+        double area, petimeter, radius, coordinateX, coordinateY, coordinateX2, coordinateY2;
+        String coun, coordX, coordY;
+        out.print(" 1)Enter number\n 2)Input by coordinates\n Your choice: ");
+        coun = scanner.next();
         check.checkInt(coun);
-        int count = Integer.parseInt(coun);
+        count = Integer.parseInt(coun);
         switch (count) {
             case 1:
-                out.print(" Enter the radius of the circle: ");
+                out.print(" 1)Area\n 2)Perimeter\n Enter the action number: ");
                 coun = scanner.next();
-                check.checkDouble(coun);
-                radius = Double.parseDouble(coun);
-                circle.setArea(radius);
-                circle.Area();
-                area = circle.getArea();
-                out.println(area);
-                break;
+                check.checkInt(coun);
+                count = Integer.parseInt(coun);
+                switch (count) {
+                    case 1:
+                        out.print(" Enter the radius of the circle: ");
+                        coun = scanner.next();
+                        check.checkDouble(coun);
+                        radius = Double.parseDouble(coun);
+                        circle.setArea(radius);
+                        circle.Area();
+                        area = circle.getArea();
+                        out.println(area);
+                        break;
+                    case 2:
+                        out.print(" Enter the radius of the circle: ");
+                        coun = scanner.next();
+                        check.checkDouble(coun);
+                        radius = Double.parseDouble(coun);
+                        circle.setPerimeter(radius);
+                        circle.Perimeter();
+                        petimeter = circle.getPerimeter();
+                        out.println(petimeter);
+                        break;
+                    default:
+                        out.println("ERROR");
+                        break;
+                }
             case 2:
-                out.print(" Enter the radius of the circle: ");
+                out.print(" 1)Area\n 2)Perimeter\n Enter the action number: ");
+                ParameterCount parameterCount = new ParameterCount();
                 coun = scanner.next();
-                check.checkDouble(coun);
-                radius = Double.parseDouble(coun);
-                circle.setPerimeter(radius);
-                circle.Perimeter();
-                petimeter = circle.getPerimeter();
-                out.println(petimeter);
+                check.checkInt(coun);
+                count = Integer.parseInt(coun);
+                switch (count) {
+                    case 1:
+                        out.print(" Value of X coordinate: ");
+                        coordX = scanner.next();
+                        check.checkCoordinate(coordX);
+                        coordinateX = Double.parseDouble(coordX);
+                        out.print(" Value of Y coordinate: ");
+                        coordY = scanner.next();
+                        check.checkCoordinate(coordY);
+                        coordinateY = Double.parseDouble(coordY);
+                        out.print(" Value of X coordinate: ");
+                        coordX = scanner.next();
+                        check.checkCoordinate(coordX);
+                        coordinateX2 = Double.parseDouble(coordX);
+                        out.print(" Value of y coordinate: ");
+                        coordY = scanner.next();
+                        check.checkCoordinate(coordY);
+                        coordinateY2 = Double.parseDouble(coordY);
+                        parameterCount.setCount(coordinateX, coordinateY, coordinateX2, coordinateY2);
+                        parameterCount.Count();
+                        radius = parameterCount.getCount();
+                        circle.setArea(radius);
+                        circle.Area();
+                        area = circle.getArea();
+                        out.println(area);
+                        break;
+                    case 2:
+                        out.print(" Value of X coordinate: ");
+                        coordX = scanner.next();
+                        check.checkCoordinate(coordX);
+                        coordinateX = Double.parseDouble(coordX);
+                        out.print(" Value of Y coordinate: ");
+                        coordY = scanner.next();
+                        check.checkCoordinate(coordY);
+                        coordinateY = Double.parseDouble(coordY);
+                        out.print(" Value of X coordinate: ");
+                        coordX = scanner.next();
+                        check.checkCoordinate(coordX);
+                        coordinateX2 = Double.parseDouble(coordX);
+                        out.print(" Value of y coordinate: ");
+                        coordY = scanner.next();
+                        check.checkCoordinate(coordY);
+                        coordinateY2 = Double.parseDouble(coordY);
+                        parameterCount.setCount(coordinateX, coordinateY, coordinateX2, coordinateY2);
+                        parameterCount.Count();
+                        radius = parameterCount.getCount();
+                        circle.setPerimeter(radius);
+                        circle.Perimeter();
+                        petimeter = circle.getPerimeter();
+                        out.println(petimeter);
+                    default:
+                        out.println("ERROR");
+                        break;
+                }
                 break;
-            default:
-                out.println("ERROR");
-                break;
+                default:
+                    out.println("ERROR");
+                    break;
         }
     }
 }
@@ -226,6 +618,14 @@ class Check {
             System.exit(0);
         }
     }
+    void checkCoordinate(String count){
+        for (int i = 1; i < length; i++) {
+            if ((count.charAt(i) != '.') && ((count.charAt(i) <48 ) || (count.charAt(i) >57))) {
+                System.out.println("ERROR");
+                System.exit(0);
+            }
+        }
+    }
 }
 class Square {
     private Double perimeter;
@@ -240,6 +640,7 @@ class Square {
         this.height=height;
     }
     Double getArea(){
+        Area();
         return  area;
     }
     void Perimeter(){
@@ -326,5 +727,57 @@ class Circle{
     }
     Double getPerimeter(){
         return  perimeter;
+    }
+}
+class ParameterCount{
+    double count,coordinateX,coordinateY,coordinateX2,coordinateY2,count2;
+    void Count () {
+        if(coordinateX==coordinateX2){
+            if(coordinateY>coordinateY2){
+                count=coordinateY-coordinateY2;
+            }else{
+                count=coordinateY2-coordinateY;
+            }
+        }
+        if(coordinateY==coordinateY2){
+            if(coordinateX>coordinateX2){
+                count=coordinateX-coordinateX2;
+            }else{
+                count=coordinateX2-coordinateX;
+            }
+        }
+        if (coordinateX < coordinateX2) {
+            if (coordinateY < coordinateY2) {
+                count2 = (Math.pow(coordinateX2 - coordinateX, 2) + Math.pow(coordinateY2 - coordinateY, 2));
+                count = Math.sqrt(count2);
+            }
+        }
+        if (coordinateX2 > coordinateX) {
+            if (coordinateY > coordinateY2) {
+                count2 = (Math.pow(coordinateX2 - coordinateX, 2) + Math.pow(coordinateY - coordinateY2, 2));
+                count = Math.sqrt(count2);
+            }
+        }
+        if (coordinateX > coordinateX2) {
+            if (coordinateY2 > coordinateY) {
+                count2 = (Math.pow(coordinateX - coordinateX2, 2) + Math.pow(coordinateY2 - coordinateY, 2));
+                count = Math.sqrt(count2);
+            }
+        }
+        if (coordinateX > coordinateX2) {
+            if (coordinateY > coordinateY2) {
+                count2 = (Math.pow(coordinateX - coordinateX2, 2) + Math.pow(coordinateY - coordinateY2, 2));
+                count = Math.sqrt(count2);
+            }
+        }
+    }
+    Double getCount(){
+        return count;
+    }
+    void setCount (Double coordinateX,Double coordinateY,Double coordinateX2,Double coordinateY2){
+        this.coordinateX=coordinateX;
+        this.coordinateY=coordinateY;
+        this.coordinateX2=coordinateX2;
+        this.coordinateY2=coordinateY2;
     }
 }
