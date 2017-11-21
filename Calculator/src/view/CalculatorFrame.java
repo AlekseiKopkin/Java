@@ -10,6 +10,8 @@ public class CalculatorFrame extends JFrame
        setTitle("Calculator");
        setDefaultCloseOperation(EXIT_ON_CLOSE);
        add(new CalculatorPanel());
+       setLocationRelativeTo(null);
+       setResizable(false);
        setVisible(true);
    }
 }

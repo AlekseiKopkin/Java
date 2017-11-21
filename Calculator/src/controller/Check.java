@@ -7,7 +7,7 @@ public class Check {
     PrintMessages printMessages = new PrintMessages();
 
     public void NumberSing(int numberSing) {
-        if (numberSing > 1) {
+        if (numberSing > 2) {
             printMessages.Error();
         }
     }
@@ -16,8 +16,8 @@ public class Check {
         if (stroka.charAt(0) == '.') {
             printMessages.Error();
         }
-        for (int i = 0; i < stroka.length(); i++) {
-            if (count >2) {
+        for (int i = 0; i < stroka.length() - 1; i++) {
+            if (count != 1) {
                 printMessages.Error();
             }
             if (stroka.charAt(i) == '/' || stroka.charAt(i) == '*' || stroka.charAt(i) == '-' || stroka.charAt(i) == '+') {
@@ -26,10 +26,10 @@ public class Check {
                 } else {
                     count = 0;
                 }
-            }else {
+            } else {
                 if (stroka.charAt(i) == '.') {
                     count++;
-               }
+                }
             }
         }
     }

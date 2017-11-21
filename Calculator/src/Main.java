@@ -1,7 +1,7 @@
-import view.IndentificatorFrame;
+import view.Frame;
 
 public class Main {
     public static void main(String[] args) {
-        new IndentificatorFrame();
+        Frame.getIndentificatorFrame();
     }
 }

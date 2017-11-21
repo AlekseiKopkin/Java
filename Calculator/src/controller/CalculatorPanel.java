@@ -1,9 +1,5 @@
 package controller;
 
-import controller.Calculator;
-import controller.Check;
-import controller.Value;
-import view.CalculatorFrame;
 import view.PrintMessages;
 
 import javax.swing.*;
@@ -15,7 +11,7 @@ import java.awt.event.ActionListener;
 public class CalculatorPanel extends JPanel{
     static JTextField textField = null;
     int lenght = 0;
-    String strokaResult = "", sing = "", deteleSrokaResult = "";
+    String sing = "", deteleSrokaResult = "";
     int numberSing = 0;
     double result = 0;
     double[] valueParameters = new double[2];
@@ -216,8 +212,8 @@ public class CalculatorPanel extends JPanel{
             });
             buttonPoint.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
-                    textField.setText(textField.getText()+e.getActionCommand());
                     check.NumberPoints(textField.getText());
+                    textField.setText(textField.getText()+e.getActionCommand());
                 }
             });
             buttonResult.addActionListener(new ActionListener() {

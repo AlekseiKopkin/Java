@@ -15,8 +15,9 @@ public class IndentificatorFrame extends JFrame {
         setTitle("Indentificator");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         IndentificatorPanel();
+        setLocationRelativeTo(null);
+        setResizable(false);
         setVisible(true);
-
     }
 
     public void IndentificatorPanel() {
@@ -52,8 +53,7 @@ public class IndentificatorFrame extends JFrame {
                     password = textFieldPassword.getPassword();
                     res[1][0] = new String(password);
                     file.ReadFile(res);
-                    dispose();
-                    new CalculatorFrame();
+                    Frame.getCalculatorFrame();
                 }
             });
 
