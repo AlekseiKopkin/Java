@@ -16,19 +16,38 @@ public class Check {
         if (stroka.charAt(0) == '.') {
             printMessages.Error();
         }
-        for (int i = 0; i < stroka.length() - 1; i++) {
-            if (count != 1) {
-                printMessages.Error();
-            }
-            if (stroka.charAt(i) == '/' || stroka.charAt(i) == '*' || stroka.charAt(i) == '-' || stroka.charAt(i) == '+') {
-                if (stroka.charAt(i - 1) == '.') {
+        if(stroka.charAt(0)=='-') {
+            for (int i = 1; i < stroka.length() - 1; i++) {
+                if (count >1) {
                     printMessages.Error();
-                } else {
-                    count = 0;
                 }
-            } else {
-                if (stroka.charAt(i) == '.') {
-                    count++;
+                if (stroka.charAt(i) == '/' || stroka.charAt(i) == '*' || stroka.charAt(i) == '-' || stroka.charAt(i) == '+') {
+                    if (stroka.charAt(i - 1) == '.') {
+                        printMessages.Error();
+                    } else {
+                        count = 0;
+                    }
+                } else {
+                    if (stroka.charAt(i) == '.') {
+                        count++;
+                    }
+                }
+            }
+        }else{
+            for (int i = 0; i < stroka.length() - 1; i++) {
+                if (count >1) {
+                    printMessages.Error();
+                }
+                if (stroka.charAt(i) == '/' || stroka.charAt(i) == '*' || stroka.charAt(i) == '-' || stroka.charAt(i) == '+') {
+                    if (stroka.charAt(i - 1) == '.') {
+                        printMessages.Error();
+                    } else {
+                        count = 0;
+                    }
+                } else {
+                    if (stroka.charAt(i) == '.') {
+                        count++;
+                    }
                 }
             }
         }
