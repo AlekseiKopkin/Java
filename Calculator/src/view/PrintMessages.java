@@ -1,9 +1,17 @@
 package view;
+import controller.CalculatorPanel;
+import controller.IndeteficatorPanel;
+
 import javax.swing.*;
 
 public class PrintMessages {
-    public void Error (){
+    public void ErrorIndetificator (){
         JOptionPane.showMessageDialog(null, "ERROR");
-        System.exit(0);
+        IndeteficatorPanel.getTextPassword().setText("");
+        IndeteficatorPanel.getTextLodin().setText("");
+    }
+    public void ErrorResult (){
+        JOptionPane.showMessageDialog(null, "ERROR");
+        CalculatorPanel.textField.setText("");
     }
 }

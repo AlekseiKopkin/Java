@@ -1,63 +1,44 @@
 package controller;
-import view.PrintMessages;
 
+import view.PrintMessages;
 public class Check {
     int count = 0;
     String passwordEncryption;
-    PrintMessages printMessages = new PrintMessages();
+PrintMessages printMessages=new PrintMessages();
 
-    public void NumberSing(int numberSing) {
+    public int NumberSing(int numberSing) {
         if (numberSing > 2) {
-            printMessages.Error();
+            printMessages.ErrorResult();
+            return 1;
         }
+        return 0;
     }
 
-    public void NumberPoints(String stroka) {
-        if (stroka.charAt(0) == '.') {
-            printMessages.Error();
-        }
-        if(stroka.charAt(0)=='-') {
-            for (int i = 1; i < stroka.length() - 1; i++) {
-                if (count >1) {
-                    printMessages.Error();
-                }
-                if (stroka.charAt(i) == '/' || stroka.charAt(i) == '*' || stroka.charAt(i) == '-' || stroka.charAt(i) == '+') {
-                    if (stroka.charAt(i - 1) == '.') {
-                        printMessages.Error();
-                    } else {
-                        count = 0;
-                    }
-                } else {
-                    if (stroka.charAt(i) == '.') {
-                        count++;
-                    }
-                }
-            }
-        }else{
+    public int NumberPoints(String stroka) {
+        try {
             for (int i = 0; i < stroka.length() - 1; i++) {
-                if (count >1) {
-                    printMessages.Error();
-                }
-                if (stroka.charAt(i) == '/' || stroka.charAt(i) == '*' || stroka.charAt(i) == '-' || stroka.charAt(i) == '+') {
-                    if (stroka.charAt(i - 1) == '.') {
-                        printMessages.Error();
-                    } else {
-                        count = 0;
-                    }
+                if (stroka.charAt(i) == '.'||stroka.charAt(i+1)=='.') {
+                    printMessages.ErrorResult();
+                    return 1;
                 } else {
-                    if (stroka.charAt(i) == '.') {
-                        count++;
-                    }
+                    return 0;
                 }
             }
+        } catch (Exception e) {
+            printMessages.ErrorResult();
+            return 1;
         }
+        return 0;
     }
 
-    public void CheckValue(String[][] stroka) {
+    public int CheckValue(String[][] stroka) {
         passwordEncryption = PasswordEncryption.encryptMD5(stroka[1][0]);
         stroka[1][0] = passwordEncryption;
         if (!((stroka[0][0]).equals(stroka[0][1])) || !((stroka[1][0]).equals(stroka[1][1]))) {
-            printMessages.Error();
+            printMessages.ErrorIndetificator();
+            return 1;
+        } else {
+            return 0;
         }
     }
 }

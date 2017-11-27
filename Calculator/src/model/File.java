@@ -8,8 +8,8 @@ import java.io.*;
 public class File {
     PrintMessages printMessages = new PrintMessages();
     Check check=new Check();
-
-    public void ReadFile(String[][] stroka) {
+    int error=0;
+    public int ReadFile(String[][] stroka) {
         String path = System.getProperty("user.dir") + "\\src\\model\\LoginPassword.txt";
         try (FileInputStream fin = new FileInputStream(path)) {
             int i = 0;
@@ -18,9 +18,16 @@ public class File {
                 i++;
             }
             fin.close();
-            check.CheckValue(stroka);
+            error=check.CheckValue(stroka);
+            if(error==1){
+                return 1;
+            }
+            else {
+                return 0;
+            }
         } catch (IOException ex) {
-            printMessages.Error();
+            printMessages.ErrorIndetificator();
+            return 1;
         }
     }
 }
