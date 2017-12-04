@@ -2,7 +2,6 @@ package controller;
 
 import view.PrintMessages;
 public class Check {
-    int count = 0;
     String passwordEncryption;
 PrintMessages printMessages=new PrintMessages();
 

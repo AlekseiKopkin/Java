@@ -1,7 +1,7 @@
-import view.Frame;
+package Client;
 
 public class Main {
     public static void main(String[] args) {
-        Frame.getIndentificatorFrame();
+        new ClientService();
     }
 }

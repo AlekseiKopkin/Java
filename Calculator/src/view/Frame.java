@@ -1,5 +1,6 @@
 package view;
 import javax.swing.*;
+import Client.Server;
 
 public class Frame extends JFrame {
     public static CalculatorFrame calculatorFrame;
